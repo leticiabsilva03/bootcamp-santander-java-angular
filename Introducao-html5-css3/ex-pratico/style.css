@@ -1,0 +1,15 @@
+#title, .subtitle, .post_title{
+  color: #003049;
+}
+
+.post_title {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.post {
+  backgroud: #E3D5C1;
+  padding: 10px;
+  border: 3px solid #D6CCC2;
+  margin: 10px;
+}
