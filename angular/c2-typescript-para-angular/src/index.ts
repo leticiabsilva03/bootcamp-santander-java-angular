@@ -72,7 +72,7 @@ let soma: number = addNumber(4, 7);
 console.log(soma)
 
 function addToHello(name: string): string {
-  return 'Hello ${name}';
+  return `Hello ${name}`;
 }
 console.log(addToHello("Leticia"))
 
@@ -85,3 +85,49 @@ console.log(CallToPhone(34995874521));
 async function getDatabase(id: number): Promise<string>{
   return "leticia";
 }
+
+// interfaces (type x interface)
+
+type robot = {
+  readonly id: number | string;
+  name: string;
+};
+
+interface robot2 {
+  readonly id: number | string;
+  name: string;
+  sayHello(): string;
+}
+
+const bot1: robot = {
+  id: 1,
+  name: "megaman",
+};
+
+const bot2: robot2 = {
+  id: 1,
+  name: "megaman",
+  sayHello: function (): string {
+    throw new Error("Function not implemented.");
+  }
+};
+
+console.log(bot1, bot2);
+
+class Pessoa implements robot2 {
+  id: number | string;
+  name: string;
+
+  constructor(id: number | string, name: string) {
+    this.id = id;
+    this.name = name;
+  }
+  sayHello(): string {
+    return `hello, i'm ${this.name}`;
+  }
+}
+
+const p = new Pessoa(1, "gutsman")
+console.log(p.sayHello());
+
+
